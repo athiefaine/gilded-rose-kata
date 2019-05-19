@@ -84,7 +84,7 @@ public class ItemUpdaterTest {
 
     @Test
     public void should_AgedBrie_quality_increase_daily() {
-        int initialSellIn = 10;
+        int initialSellIn = 2;
         int initialQuality = 20;
         Item item = new Item("Aged Brie", initialSellIn, initialQuality);
 
