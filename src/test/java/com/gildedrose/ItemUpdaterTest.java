@@ -145,7 +145,7 @@ public class ItemUpdaterTest {
 
     @Test
     public void should_Backstage_quality_increase_daily() {
-        int initialSellIn = 15;
+        int initialSellIn = 12;
         int initialQuality = 20;
         Item item = new Item("Backstage passes to a TAFKAL80ETC concert", initialSellIn, initialQuality);
 
@@ -160,7 +160,7 @@ public class ItemUpdaterTest {
 
     @Test
     public void should_Backstage_quality_increase_twice_as_fast_when_sellIn_is_below_ten_days() {
-        int initialSellIn = 10;
+        int initialSellIn = 7;
         int initialQuality = 20;
         Item item = new Item("Backstage passes to a TAFKAL80ETC concert", initialSellIn, initialQuality);
 
@@ -175,7 +175,7 @@ public class ItemUpdaterTest {
 
     @Test
     public void should_Backstage_quality_increase_thrice_as_fast_when_sellIn_is_below_five_days() {
-        int initialSellIn = 5;
+        int initialSellIn = 2;
         int initialQuality = 20;
         Item item = new Item("Backstage passes to a TAFKAL80ETC concert", initialSellIn, initialQuality);
 
