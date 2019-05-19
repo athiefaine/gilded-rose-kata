@@ -201,7 +201,7 @@ public class ItemUpdaterTest {
 
     @Test
     public void should_conjured_item_quality_decrease_twice_as_fast_daily() {
-        int initialSellIn = 10;
+        int initialSellIn = 2;
         int initialQuality = 20;
         Item item = new Item("Conjured", initialSellIn, initialQuality);
 
