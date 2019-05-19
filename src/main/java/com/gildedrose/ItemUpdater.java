@@ -15,18 +15,30 @@ public class ItemUpdater {
 
         item.sellIn = item.sellIn - 1;
 
-        if (item.name.equals("Aged Brie")) {
-            increaseQuality();
-            if (item.sellIn < 0) increaseQuality();
-        } else if (item.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
-            increaseQuality();
+        switch (item.name) {
+            case "Aged Brie":
+                increaseQuality();
+                if (item.sellIn < 0) increaseQuality();
+                break;
+            case "Backstage passes to a TAFKAL80ETC concert":
+                increaseQuality();
 
-            if (item.sellIn < 10) increaseQuality();
-            if (item.sellIn < 5) increaseQuality();
-            if (item.sellIn < 0) item.quality = item.quality - item.quality;
-        } else {
-            decreaseQuality();
-            if (item.sellIn < 0) decreaseQuality();
+                if (item.sellIn < 10) increaseQuality();
+                if (item.sellIn < 5) increaseQuality();
+                if (item.sellIn < 0) item.quality = item.quality - item.quality;
+                break;
+            case "Conjured":
+                decreaseQuality();
+                decreaseQuality();
+                if (item.sellIn < 0) {
+                    decreaseQuality();
+                    decreaseQuality();
+                }
+                break;
+            default:
+                decreaseQuality();
+                if (item.sellIn < 0) decreaseQuality();
+                break;
         }
     }
 

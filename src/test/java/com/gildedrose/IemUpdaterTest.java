@@ -199,4 +199,35 @@ public class IemUpdaterTest {
         assertThat(item.quality).isEqualTo(0);
     }
 
+    @Test
+    public void should_conjured_item_quality_decrease_twice_as_fast_daily() {
+        int initialSellIn = 10;
+        int initialQuality = 20;
+        Item item = new Item("Conjured", initialSellIn, initialQuality);
+
+        new ItemUpdater(item).updateQuality();
+
+        assertThat(item.quality).isEqualTo(initialQuality - 2);
+
+        new ItemUpdater(item).updateQuality();
+
+        assertThat(item.quality).isEqualTo(initialQuality - 4);
+    }
+
+    @Test
+    public void should_conjured_item_quality_decrease_four_time_as_fast_when_sellIn_is_elapsed() {
+        int initialSellIn = -1;
+        int initialQuality = 20;
+        Item item = new Item("Conjured", initialSellIn, initialQuality);
+
+        new ItemUpdater(item).updateQuality();
+
+        assertThat(item.quality).isEqualTo(initialQuality - 4);
+
+        new ItemUpdater(item).updateQuality();
+
+        assertThat(item.quality).isEqualTo(initialQuality - 8);
+    }
+
+
 }
