@@ -1,7 +1,6 @@
 package com.gildedrose;
 
 class GildedRose {
-    private final ItemUpdater itemUpdater = new ItemUpdater();
     Item[] items;
 
     public GildedRose(Item[] items) {

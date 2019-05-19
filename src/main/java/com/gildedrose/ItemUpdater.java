@@ -4,9 +4,6 @@ public class ItemUpdater {
 
     private Item item;
 
-    public ItemUpdater() {
-    }
-
     public ItemUpdater(Item item) {
         this.item = item;
     }
